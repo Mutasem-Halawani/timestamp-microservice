@@ -1,10 +1,11 @@
 {
   "name": "timestamp-microservice",
   "version": "0.0.1",
-  "description": "TimeStap Express App",
+  "description": "TimeStamp Express App",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node server.js"
   },
   "repository": {
     "type": "git",
