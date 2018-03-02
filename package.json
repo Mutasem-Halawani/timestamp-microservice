@@ -1,0 +1,27 @@
+{
+  "name": "timestamp-microservice",
+  "version": "0.0.1",
+  "description": "TimeStap Express App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mutasem-Halawani/timestamp-microservice.git"
+  },
+  "keywords": [
+    "Express",
+    "Timestamp",
+    "FFC"
+  ],
+  "author": "Mutasem Halawani",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mutasem-Halawani/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/Mutasem-Halawani/timestamp-microservice#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
