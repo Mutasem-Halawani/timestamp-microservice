@@ -1,6 +1,6 @@
 {
   "name": "timestamp-microservice",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "TimeStamp Express App",
   "main": "server.js",
   "scripts": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/Mutasem-Halawani/timestamp-microservice#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "moment": "^2.21.0"
   }
 }
