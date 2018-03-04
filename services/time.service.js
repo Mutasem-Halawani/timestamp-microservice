@@ -1,8 +1,6 @@
 const moment = require('moment');
 
 const timeService = function (date) {
-    console.log('date: ', date);
-
     var regex = /^[0-9]*$/g;
     var isNum = regex.test(date);
 
