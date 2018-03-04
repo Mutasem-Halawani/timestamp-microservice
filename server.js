@@ -1,55 +1,17 @@
 const express = require('express');
-const moment = require('moment');
-const port = 3000;
+const path = require('path');
+const port = Number(process.argv.port || 3000);
+const timeService = require('./time.service.js');
 
 const app = express();
 
-app.get('*', (req, res) => {
-  var date = req.path.substr(1);
-  console.log('date: ',Boolean(date));
-  var regex = /(%20)/g;
+app.use(express.static(path.join(__dirname, 'public')));
 
-    if (Boolean(date)) { //If parameter passed
-      if (regex.test(date)) { //Natural Date Given
-        let naturalDate = date.replace(regex, ' ');
-        let unixDate = moment(new Date(naturalDate)).unix();
-        if (naturalDate === 'Invalid Date' || Date.parse(date)) {
-          res.setHeader('Content-Type', 'application/json');
-          res.send(JSON.stringify({
-            "unix": null,
-            "natural": null
-          }));
-        } else {
-          res.setHeader('Content-Type', 'application/json');
-          res.send(JSON.stringify({
-            "unix": unixDate,
-            "natural": naturalDate
-          }));
-        }
-      } else { //Unix Date Given
-        let naturalDate = moment.unix(date).format('MMMM DD, YYYY');
-        let unixDate = date;
-        if (naturalDate === 'Invalid date') {
-          res.setHeader('Content-Type', 'application/json');
-          res.send(JSON.stringify({
-            "unix": null,
-            "natural": null
-          }));
-        } else {
-          res.setHeader('Content-Type', 'application/json');
-          res.send(JSON.stringify({
-            "unix": unixDate,
-            "natural": naturalDate
-          }));
-        }
-      }
-    } else {
-      res.setHeader('Content-Type', 'application/json');
-      res.send(JSON.stringify({
-        "unix": null,
-        "natural": null
-      }));
-    }
+app.get('/:time', (req, res) => {
+  var date = req.params.time;
+  timeService(date);
+  res.setHeader('Content-Type', 'application/json');
+  res.send(JSON.stringify(timeService(date)));
 });
 
-app.listen(port);
+app.listen(port, console.log(`listening on port ${port}`));
