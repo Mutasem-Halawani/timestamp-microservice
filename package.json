@@ -25,5 +25,9 @@
   "dependencies": {
     "express": "^4.16.2",
     "moment": "^2.21.0"
+  },
+  "engines": {
+    "node": "8.9.3",
+    "npm": "5.6.0"
   }
 }
