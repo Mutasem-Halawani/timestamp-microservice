@@ -12,4 +12,4 @@ app.get('/:time', (req, res) => {
   res.send(JSON.stringify(timeService(date)));
 });
 
-app.listen(process.argv.PORT || 3000);
+app.listen(process.env.PORT || 3000);
