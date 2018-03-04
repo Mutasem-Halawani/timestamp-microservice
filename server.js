@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const port = Number(process.argv.PORT || 3000);
 const timeService = require('./services/time.service.js');
 
 const app = express();
@@ -13,4 +12,4 @@ app.get('/:time', (req, res) => {
   res.send(JSON.stringify(timeService(date)));
 });
 
-app.listen(port, console.log(`listening on port ${port}`));
+app.listen(process.argv.PORT || 3000);
